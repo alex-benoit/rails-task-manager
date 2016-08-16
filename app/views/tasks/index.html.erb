@@ -1,7 +1,16 @@
 <h1>List of Tasks</h1>
 
+<%= link_to "Add new Task", new_task_path %>
+
 <% @tasks.each do |task| %>
-  <h2> <%= link_to task.title, task_path(task) %> </h2>
-  <p> <%= task.done %> </p>
-  <p> <%= link_to "Edit", edit_task_path(task) %> </p>
+  <div class="card">
+    <h2> <%= link_to task.title, task_path(task) %> </h2>
+    <p> Done? <%= task.done %> </p>
+    <p>
+      <%= link_to "Show more", task_path(task) %>
+      <%= link_to "Edit", edit_task_path(task) %>
+      <%= link_to "Delete", task_path(task), method: :delete %>
+    </p>
+  </div>
+
 <% end %>
