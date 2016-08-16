@@ -8,5 +8,5 @@
 
 Task.create(title:"Cleaning", done:false)
 Task.create(title:"Groceries", done:false)
-Task.create(title:"Cleaning", done:false)
-Task.create(title:"Cleaning", done:false)
+Task.create(title:"Apply", done:false)
+Task.create(title:"Go for a run", done:false)
