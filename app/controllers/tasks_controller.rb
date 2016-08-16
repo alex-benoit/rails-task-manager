@@ -8,15 +8,18 @@ class TasksController < ApplicationController
   end
 
   def new
+
   end
 
   def create
   end
 
   def edit
+    @task = Task.find(params[:id])
   end
 
   def update
+
   end
 
   def destroy
