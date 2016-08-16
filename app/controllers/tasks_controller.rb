@@ -12,8 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create(params[:task])
-    # Will raise ActiveModel::ForbiddenAttributesError
+    @task = Task.create(task_params)
   end
 
   def edit
@@ -22,8 +21,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(params[:task])
-    # Will raise ActiveModel::ForbiddenAttributesError
+    @task.update(task_params)
   end
 
   def destroy
@@ -31,5 +29,8 @@ class TasksController < ApplicationController
   end
 
   private
+  def task_params
+    params.require(:task).permit(:title, :done)
+  end
 
 end
